@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 
-import keepAliveCron from "./cron";
+import keepAliveCron from "./cron.js";
 
 dotenv.config();
 
