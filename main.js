@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 
+import keepAliveCron from "./cron";
+
 dotenv.config();
 
 const app = express();
@@ -103,5 +105,7 @@ app.post("/api/contact", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on PORT:${PORT}`);
+
+  keepAliveCron.start();
 });
