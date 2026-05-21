@@ -70,6 +70,7 @@ app.post("/api/contact", async (req, res) => {
           Email: email.trim(),
           Subject: subject?.trim() || "",
           Message: message.trim(),
+          "Created On": new Date().toISOString().split("T")[0],
         },
       }),
     });
